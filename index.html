@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Crumbs Bakery</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          heading: ['Playfair Display', 'serif'],
+          body: ['Poppins', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+</head>
+
+<body class="font-body overflow-x-hidden bg-white">
+
+<nav class="bg-white/80 backdrop-blur-md text-gray-800 p-4 flex items-center justify-between shadow-md">
+
+  <div class="flex items-center space-x-2">
+    <img src="img/logo.png" class="h-10 w-auto">
+  </div>
+
+  
+
+  <div class="flex items-center space-x-4">
+
+  <div class="relative">
+    <i class="fa-solid fa-cart-shopping text-2xl text-pink-600"></i>
+
+    <span id="cart-count"
+      class="absolute -top-2 -right-3 bg-pink-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+      0
+    </span>
+  </div>
+
+  <button onclick="checkoutCart()"
+    class="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-full transition">
+    Checkout
+  </button>
+
+</div>
+
+</nav>
+
+<section class="bg-pink-50 py-16 px-8">
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="w-full h-[300px] md:h-[400px]">
+      <video class="w-full h-full object-cover rounded-3xl shadow-lg" autoplay muted loop playsinline>
+        <source src="img/Cake.mp4" >
+      </video>
+    </div>
+
+    <div>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold text-pink-700 mb-4">
+        Deliver You A Blissful Dessert in Every Bite
+      </h1>
+
+      <p class="text-gray-600 text-sm md:text-base mb-6">
+        Freshly baked cakes, pastries, and desserts made with love for every sweet craving.
+      </p>
+
+      <button class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+        Order Here!
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<div class="relative -mt-2">
+  <svg viewBox="0 0 1440 180" class="w-full h-[150px]" preserveAspectRatio="none">
+    <path fill="#fdf2f8"
+      d="M0,64L40,85.3C80,107,160,149,240,149.3C320,149,400,107,480,101.3C560,96,640,128,720,128C800,128,880,96,960,85.3C1040,75,1120,85,1200,96C1280,107,1360,117,1400,122.7L1440,128L1440,0L0,0Z">
+    </path>
+  </svg>
+</div>
+
+<section class="max-w-6xl mx-auto px-6 pb-20">
+
+  <h1 class="text-4xl md:text-5xl text-center font-heading font-bold text-pink-700 mb-6">
+        Order your Blissful Dessert Now!
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/cake4.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      
+
+      <div class="p-5 text-center">
+
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Butterfly Cream Cake</h3>
+
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 1500</span>
+        </div>
+
+        <p class="text-gray-600 text-sm">
+          Light and fluffy cake with a creamy filling, decorated with colorful butterfly-shaped frosting.
+        </p>
+        <br>
+       <button 
+  onclick="addToCart('Butterfly Cream Cake', 1500)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/cake2.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      <div class="p-5 text-center">
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Strawberry Fluffy Cake</h3>
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 1200</span>
+        </div>
+        <p class="text-gray-600 text-sm">
+          A light and fluffy vanilla sponge cake layered with smooth. 
+          Soft, moist, and perfectly balanced with a creamy texture.
+        </p>
+
+        <br>
+        <button 
+  onclick="addToCart('Strawberry Fluffy Cake', 1200)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/cake3.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      <div class="p-5 text-center">
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Sponge Butter Cake</h3>
+
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 1300</span>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Light and fluffy sponge cake layered with rich buttercream frosting, a timeless classic for any occasion.
+        </p>
+        <br>
+        <button 
+  onclick="addToCart('Sponge Butter Cake', 1300)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/macarons.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      <div class="p-5 text-center">
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Macarons</h3>
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 999</span>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Colorful and delicate French cookies with a creamy filling.
+        </p>
+        <br>
+        <button 
+  onclick="addToCart('Macarons', 999)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/Tiramisu.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      <div class="p-5 text-center">
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Tiramisu</h3>
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 700</span>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.
+        </p>
+        <br>
+        <button 
+  onclick="addToCart('Tiramisu', 700)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>   
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition">
+
+      <img src="img/scones.jpg"
+        class="w-full h-52 object-cover group-hover:scale-105 transition duration-300">
+
+      <div class="p-5 text-center">
+        <h3 class="font-heading text-xl text-pink-700 mb-2">Butter Pecan Scones</h3>
+        <div class="w-20 h-5 mx-auto mb-4 rounded-full bg-pink-500 flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-s">₱ 360</span>
+        </div>
+        <p class="text-gray-600 text-sm">
+           Flaky butterscotch scones with a sweet pecan filling, perfect for breakfast or tea time.
+        </p>
+        <br>
+        <button 
+  onclick="addToCart('Butter Pecan Scones', 360)"
+  class="bg-pink-700 text-white px-6 py-2 text-sm md:text-base rounded-full hover:bg-pink-400 transition">
+
+  <i class="fa-solid fa-shopping-cart text-white mr-1"></i>
+  Add to Cart
+
+</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="relative -mb-1 rotate-180">
+  <svg viewBox="0 0 1440 120" class="w-full h-[100px]" preserveAspectRatio="none">
+    <path fill="#fdf2f8"
+      d="M0,64L60,85.3C120,107,240,149,360,138.7C480,128,600,64,720,53.3C840,43,960,85,1080,106.7C1200,128,1320,128,1380,128L1440,128L1440,0L0,0Z">
+    </path>
+  </svg>
+</div>
+
+<footer class="bg-pink-50 text-center py-12 px-6">
+
+  <h3 class="text-2xl md:text-3xl font-bold text-pink-700">
+    Sweet Crumbs Bakery
+  </h3>
+
+  <p class="text-gray-600 mt-2 text-sm md:text-base">
+    Baked with love, served with sweetness
+  </p>
+
+  <div class="mt-6 space-y-2 text-gray-700 text-sm">
+    <p class="flex justify-center items-center space-x-2">
+      <i class="fa-solid fa-phone text-pink-500"></i>
+      <span>0912-345-6789</span>
+    </p>
+
+    <p class="flex justify-center items-center space-x-2">
+      <i class="fa-solid fa-envelope text-pink-500"></i>
+      <span>sweetcrumbs@email.com</span>
+    </p>
+
+    <p class="flex justify-center items-center space-x-2">
+      <i class="fa-solid fa-location-dot text-pink-500"></i>
+      <span>Imus, Cavite</span>
+    </p>
+  </div>
+
+  <div class="flex justify-center space-x-5 mt-6 text-xl">
+    <a href="#" class="text-pink-500 hover:text-pink-700 hover:scale-110 transition">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+
+    <a href="#" class="text-pink-500 hover:text-pink-700 hover:scale-110 transition">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#" class="text-pink-500 hover:text-pink-700 hover:scale-110 transition">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+  </div>
+
+  <p class="text-gray-400 text-xs mt-8">
+    © 2026 Sweet Crumbs Bakery. All rights reserved.
+  </p>
+
+</footer>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal"
+  class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+
+  <div class="bg-white w-[90%] max-w-md rounded-3xl p-6 shadow-2xl">
+
+    <h2 class="text-2xl font-bold text-pink-700 mb-4 text-center">
+      Checkout Receipt
+    </h2>
+
+    <div id="receipt-items"
+      class="text-sm text-gray-700 space-y-2 mb-4 max-h-52 overflow-y-auto">
+    </div>
+
+    <div class="border-t pt-3 space-y-2">
+
+      <p class="font-semibold text-pink-700">
+        Total: ₱<span id="receipt-total">0</span>
+      </p>
+
+      <input type="number"
+        id="customer-money"
+        placeholder="Enter your money"
+        class="w-full border border-pink-300 rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-pink-400">
+
+      <p class="font-semibold text-green-600">
+        Change: ₱<span id="change">0</span>
+      </p>
+
+    </div>
+
+    <div class="flex justify-between mt-6">
+
+      <button onclick="closeModal()"
+        class="bg-gray-300 hover:bg-gray-400 px-5 py-2 rounded-full transition">
+        Cancel
+      </button>
+
+      <button onclick="confirmCheckout()"
+        class="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-full transition">
+        Confirm Order
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+var cart = [];
+var totalItems = 0;
+
+function addToCart(productName, price) {
+
+  cart.push({
+    name: productName,
+    price: price
+  });
+
+  totalItems++;
+
+  document.getElementById("cart-count").innerHTML = totalItems;
+
+  alert(productName + " added to cart!");
+}
+
+function checkoutCart() {
+
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  var receiptHTML = "";
+  var total = 0;
+
+  for (var i = 0; i < cart.length; i++) {
+
+    receiptHTML +=
+      '<div class="flex justify-between border-b pb-2">' +
+      '<span>' + (i + 1) + '. ' + cart[i].name + '</span>' +
+      '<span>₱' + cart[i].price + '</span>' +
+      '</div>';
+
+    total += cart[i].price;
+  }
+
+  document.getElementById("receipt-items").innerHTML = receiptHTML;
+
+  document.getElementById("receipt-total").innerHTML = total;
+
+  document.getElementById("checkout-modal").classList.remove("hidden");
+  document.getElementById("checkout-modal").classList.add("flex");
+
+  document.getElementById("customer-money").value = "";
+
+  document.getElementById("change").innerHTML = "0.00";
+}
+
+function closeModal() {
+
+  document.getElementById("checkout-modal").classList.add("hidden");
+
+  document.getElementById("checkout-modal").classList.remove("flex");
+}
+
+function confirmCheckout() {
+
+  var total = 0;
+
+  for (var i = 0; i < cart.length; i++) {
+    total += cart[i].price;
+  }
+
+  var money = parseFloat(
+    document.getElementById("customer-money").value
+  );
+
+  if (isNaN(money) || money <= 0) {
+    alert("Please enter valid payment.");
+    return;
+  }
+
+  if (money < total) {
+    alert("Insufficient payment!");
+    return;
+  }
+
+  var change = money - total;
+
+  document.getElementById("change").innerHTML =
+    change.toFixed(2);
+
+  document.getElementById("receipt-items").innerHTML +=
+    '<div class="border-t pt-4 mt-4 text-sm">' +
+    '<p><strong>Payment:</strong> ₱' + money.toFixed(2) + '</p>' +
+    '<p><strong>Change:</strong> ₱' + change.toFixed(2) + '</p>' +
+    '<p class="text-green-600 font-semibold mt-2">' +
+    '✔ Order Successful!' +
+    '</p>' +
+    '</div>';
+
+  cart = [];
+  totalItems = 0;
+
+  document.getElementById("cart-count").innerHTML = "0";
+}
+
+</script>
+</body>
+</html>
